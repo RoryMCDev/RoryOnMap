@@ -1,19 +1,19 @@
-ImageOnMap
+RoryOnMap
 ==========
 
-Repo for ImageOnMap, a bukkit plugin.
+Repo for RoryOnMap, a bukkit plugin.
 
 
 ## Features
 
-ImageOnMap allows you to load a picture from the Internet to a Minecraft map.
+RoryOnMap allows you to load a picture from the Internet to a Minecraft map.
 
-- Loads an image from a URL onto a map. PNG, JPEG and static GIF are supported.
-- These images will be saved on your server and reloaded at restart.
+- Loads an Rory from a URL onto a map. PNG, JPEG and static GIF are supported.
+- These Rorys will be saved on your server and reloaded at restart.
 - Big pictures will be cut automatically into several parts, to be rendered over multiple maps so they can cover whole
   walls! As example a 1024x1024 picture will be cut in 16 maps.
-- Your image will be centered.
-- You can put your map in an item frame, or in multiple ones at once—ImageOnMap handles the placement for you!
+- Your Rory will be centered.
+- You can put your map in an item frame, or in multiple ones at once—RoryOnMap handles the placement for you!
 
 This plugin is a free software licenced under the [CeCILL-B licence](https://cecill.info/licences/Licence_CeCILL-B_V1-en.html)
 (BSD-style in French law).
@@ -21,7 +21,7 @@ This plugin is a free software licenced under the [CeCILL-B licence](https://cec
 
 ## Quick guide
 
-- Ensure that you have a free slot in your inventory, as ImageOnMap will give you a map.
+- Ensure that you have a free slot in your inventory, as RoryOnMap will give you a map.
 - Type `/tomap URL`, where URL is a link to the picture you want to render (see the section below).
 - Enjoy your picture! You can place it in an item frame to make a nice poster if you want.
 
@@ -30,13 +30,13 @@ This plugin is a free software licenced under the [CeCILL-B licence](https://cec
 
 ### `/tomap <url>`
 
-Renders an image and gives a map to the player with it.
+Renders an Rory and gives a map to the player with it.
 
 - This command can only be used by a player.
 - The link must be complete, do not forget that the chat limit is 240 characters.
 - You can use an URL shortener like tinyURL or bitly.
 - If you want a picture in one map, type resize after the link.
-- Permission: `imageonmap.new` (or `imageonmap.userender`—legacy, but will be kept in the plugin).
+- Permission: `ImageOnmap.new` (or `ImageOnmap.userender`—legacy, but will be kept in the plugin).
 
 
 ### `/maps [PlayerName]`
@@ -48,7 +48,7 @@ Opens a GUI to see, retrieve and manage the user's maps, can be used to see othe
 - A book is displayed too to see some usage statistics (maps created, quotas).
 - An user can retrieve a map by left-clicking it, or manage it by right-clicking.
 - Maps can be renamed (for organization), deleted (but they won't render in game anymore!), or partially retrieved (for posters maps containing more than one map).
-- Permissions: `imageonmap.explore`,`imageonmap.list`, plus `imageonmap.get`, `imageonmap.rename` and `imageonmap.delete` for actions into the GUI, for moderation usage`imageonmap.exploreother`, `imageonmap.listother`,`imageonmap.getother`,`imageonmap.deleteother`.
+- Permissions: `ImageOnmap.explore`,`ImageOnmap.list`, plus `ImageOnmap.get`, `ImageOnmap.rename` and `ImageOnmap.delete` for actions into the GUI, for moderation usage`ImageOnmap.exploreother`, `ImageOnmap.listother`,`ImageOnmap.getother`,`ImageOnmap.deleteother`.
 
 ### `/givemap PlayerName [PlayerFrom]:<MapName>`
 
@@ -57,7 +57,7 @@ Give to a player a map from a player map store (if not specified will take from 
 Examples:
     - `/givemap Vlammar "A very cool map name"` Will give the map named "A very cool map name" to the player Vlammar
     - `/givemap Vlammar AmauryPi:"A very cool map name"` Same as above but will use AmauryPi's map store instead of the one of the player that runs the command
-- Permission: `imageonmap.give`
+- Permission: `ImageOnmap.give`
 
 ### `/maptool update [PlayerName]:<MapName> <new url> [stretched|covered] `
 
@@ -66,7 +66,7 @@ Update a specified map (the field PlayerName is optional, by default it will loo
 Examples:
     - `/maptool update "A very cool map name" https://www.numerama.com/wp-content/uploads/2020/09/never-gonna-give-you-up-clip-1024x581.jpg ` Will update the map named "A very cool map name" 
     - `/maptool update AmauryPi:"A very cool map name" https://www.numerama.com/wp-content/uploads/2020/09/never-gonna-give-you-up-clip-1024x581.jpg covered` Will update AmauryPi's map and set it to covered
-- Permissions: `imageonmap.update`, `imageonmap.updateother`
+- Permissions: `ImageOnmap.update`, `ImageOnmap.updateother`
 ### `/maptool <new|list|get|delete|explore|update|give|rename|migrate>`
 
 Main command to manage the maps. The less used in everyday usage, too.
@@ -77,25 +77,25 @@ Main command to manage the maps. The less used in everyday usage, too.
 - `/maptool give` is an alias of `/givemap`.
 - `/maptool update` allow to update a specific map.
 - `/maptool migrate` migrates the old maps when you upgrade from IoM <= 2.7 to IoM 3.0. You HAVE TO execute this command to retrieve all maps when you do such a migration.
-- the followings commands come with an extra permission `imageonmap.CMDNAMEother`:
+- the followings commands come with an extra permission `ImageOnmap.CMDNAMEother`:
   - `/maptool list|get|delete|explore|update`
 - Permissions:
-  - `imageonmap.new` for `/maptool new`;
-  - `imageonmap.list` for both `/maptool list` and `/maptool explore`;
-  - `imageonmap.get` for `/maptool get`;
-  - `imageonmap.delete` for `/maptool delete`;
-  - `imageonmap.administrative` for `/maptool migrate`.
-  - `imageonmap.explore` for `/maptool explore`;
-  - `imageonmap.update` for `/maptool update`;
-  - `imageonmap.give` for `/maptool give`.
+  - `ImageOnmap.new` for `/maptool new`;
+  - `ImageOnmap.list` for both `/maptool list` and `/maptool explore`;
+  - `ImageOnmap.get` for `/maptool get`;
+  - `ImageOnmap.delete` for `/maptool delete`;
+  - `ImageOnmap.administrative` for `/maptool migrate`.
+  - `ImageOnmap.explore` for `/maptool explore`;
+  - `ImageOnmap.update` for `/maptool update`;
+  - `ImageOnmap.give` for `/maptool give`.
   
 
 ### About the permissions
 
-All permissions are by default granted to everyone, with the exception of `imageonmap.administrative`, `imageonmap.give` and the ones that used the suffix `other` . We believe that in most cases, servers administrators want to give the availability to create images on maps to every player.  
+All permissions are by default granted to everyone, with the exception of `ImageOnmap.administrative`, `ImageOnmap.give` and the ones that used the suffix `other` . We believe that in most cases, servers administrators want to give the availability to create Rorys on maps to every player.  
 Negate a permission using a plugin manager to remove it, if you want to restrict this possibility to a set of users.
 
-You can grant `imageonmap.*` to users, as this permission is a shortcut for all _user_ permissions (excluding `imageonmap.administrative` , `imageonmap.give` and every permission with the prefix `other` that are intended for moderation usage).
+You can grant `ImageOnmap.*` to users, as this permission is a shortcut for all _user_ permissions (excluding `ImageOnmap.administrative` , `ImageOnmap.give` and every permission with the prefix `other` that are intended for moderation usage).
 
 
 ## Configuration
@@ -107,31 +107,31 @@ lang:
 
 
 # Allows collection of anonymous statistics on plugin environment and usage
-# The statistics are publicly visible here: http://mcstats.org/plugin/ImageOnMap
+# The statistics are publicly visible here: http://mcstats.org/plugin/RoryOnMap
 collect-data: true
 
 
-# Images rendered on maps consume Minecraft maps ID, and there are only 32 767 of them.
-# You can limit the maximum number of maps a player, or the whole server, can use with ImageOnMap.
+# Rorys rendered on maps consume Minecraft maps ID, and there are only 32 767 of them.
+# You can limit the maximum number of maps a player, or the whole server, can use with RoryOnMap.
 # 0 means unlimited.
 map-global-limit: 0
 map-player-limit: 0
 
 
-# Maximum size in pixels for an image to be. 0 is unlimited.
+# Maximum size in pixels for an Rory to be. 0 is unlimited.
 limit-map-size-x: 0
 limit-map-size-y: 0
 
 
-# Should the full image be saved when a map is rendered?
-save-full-image: false
+# Should the full Rory be saved when a map is rendered?
+save-full-Rory: false
 ```
 
 ## Changelog
 
 ### 3.0 — The From-Scratch Update
 
-The 3.0 release is a complete rewrite of the original ImageOnMap plugin, now based on QuartzLib, which adds many feature and fixes many bugs.
+The 3.0 release is a complete rewrite of the original RoryOnMap plugin, now based on QuartzLib, which adds many feature and fixes many bugs.
 
 This new version is not compatible with the older ones, so your older maps will not be loaded. Run the `/maptool migrate` command (as op or in console) in order to get them back in this new version.
 
@@ -170,16 +170,16 @@ upcoming Minecraft 1.16 version, an update will add compatibility soon after its
 
 ### 4.1 — Moderation Update
 
-*4.1 — Moderation Update* gives mods or admins commands to see maps for other players, to give maps, but also to update maps already placed in the world. You can also use ImageOnMap commands from the console or from command blocks, opening a whole new realm of automation around ImageOnMap (read: commands executed from skripts and data-packs should work).
+*4.1 — Moderation Update* gives mods or admins commands to see maps for other players, to give maps, but also to update maps already placed in the world. You can also use RoryOnMap commands from the console or from command blocks, opening a whole new realm of automation around RoryOnMap (read: commands executed from skripts and data-packs should work).
 
 We also fixed some bugs that were reported by lots of people.
 
 **This version is only compatible with Minecraft 1.15+.**
 
-- Added `/maptool update` to change the image attached to a map.
+- Added `/maptool update` to change the Rory attached to a map.
 - Added `/givemap` to give a map of a specific player to another.
 - All command can now be executed for other players. As example, `/maps username` will allow you to see all `username` maps.
-- You can now use ImageOnMap commands from command blocks or from the console.
+- You can now use RoryOnMap commands from command blocks or from the console.
 - Commands now support map name between quotes: "A nice name to have for a map".
 - Added `/maptool rename` if you don't want or cannot use the GUI.
 - Size limit (in frame).
@@ -211,6 +211,6 @@ This version fixes some small console spam bugs and improves the performance of 
 
 ## Data collection
 
-We use metrics to collect [basic information about the usage of this plugin](https://bstats.org/plugin/bukkit/ImageOnMap).
+We use metrics to collect [basic information about the usage of this plugin](https://bstats.org/plugin/bukkit/RoryOnMap).
 This is 100% anonymous (you can check the source code or the network traffic), but can of course be disabled by setting
 `collect-data` to false in `config.yml`.
